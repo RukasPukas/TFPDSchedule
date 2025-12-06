@@ -7,11 +7,14 @@ const app = express();
 const PORT = 3000;
 
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Eintracht7!",
-  database: "lukisoft_scheduler",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
 });
 
 // connect to MySQL
